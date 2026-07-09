@@ -1,0 +1,9 @@
+08-07-26 06:09:55.508 main                  INFO SpringApplication         Starting OrmLearnApplication using Java 21.0.11
+08-07-26 06:09:55.514 main                  INFO SpringApplication         Started OrmLearnApplication - ApplicationContext initialised
+08-07-26 06:09:55.516 main                  INFO OrmLearnApplication       Inside main
+Hibernate: insert into country (co_code, co_name) values ('IN', 'India')
+Hibernate: insert into country (co_code, co_name) values ('US', 'United States of America')
+08-07-26 06:09:55.593 main                  INFO OrmLearnApplication       Start
+Hibernate: select * from country
+08-07-26 06:09:55.596 main                 DEBUG OrmLearnApplication       countries=[Country [code=IN, name=India], Country [code=US, name=United States of America]]
+08-07-26 06:09:55.602 main                  INFO OrmLearnApplication       End

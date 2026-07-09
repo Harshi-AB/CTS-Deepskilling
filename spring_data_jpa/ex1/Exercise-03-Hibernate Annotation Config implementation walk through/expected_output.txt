@@ -1,0 +1,53 @@
+08-07-26 06:13:46.766 main                  INFO SessionFactory            Building SessionFactory for dialect=org.hibernate.dialect.MySQL8Dialect
+08-07-26 06:13:46.771 main                  INFO SessionFactory            Connecting to url=jdbc:mysql://localhost:3306/hibernatelearn as user=root
+08-07-26 06:13:46.772 main                  INFO SessionFactory            Mapped entity Employee -> table EMPLOYEE
+08-07-26 06:13:46.772 main                 DEBUG SessionFactory            Opening new Hibernate Session
+08-07-26 06:13:46.775 main                 DEBUG Session                   Beginning transaction
+Hibernate: insert into EMPLOYEE (id, first_name, last_name, salary) values ('1001', 'Zara', 'Ali', '1000')
+08-07-26 06:13:46.814 main                 DEBUG Transaction               Committing transaction
+08-07-26 06:13:46.819 main                  INFO ManageEmployeeAnnotation  Employee created with id=1001
+08-07-26 06:13:46.819 main                 DEBUG Session                   Closing session
+08-07-26 06:13:46.820 main                 DEBUG SessionFactory            Opening new Hibernate Session
+08-07-26 06:13:46.820 main                 DEBUG Session                   Beginning transaction
+Hibernate: insert into EMPLOYEE (id, first_name, last_name, salary) values ('1002', 'Daisy', 'Das', '5000')
+08-07-26 06:13:46.821 main                 DEBUG Transaction               Committing transaction
+08-07-26 06:13:46.821 main                  INFO ManageEmployeeAnnotation  Employee created with id=1002
+08-07-26 06:13:46.822 main                 DEBUG Session                   Closing session
+08-07-26 06:13:46.832 main                 DEBUG SessionFactory            Opening new Hibernate Session
+08-07-26 06:13:46.833 main                 DEBUG Session                   Beginning transaction
+Hibernate: insert into EMPLOYEE (id, first_name, last_name, salary) values ('1003', 'John', 'Paul', '10000')
+08-07-26 06:13:46.833 main                 DEBUG Transaction               Committing transaction
+08-07-26 06:13:46.836 main                  INFO ManageEmployeeAnnotation  Employee created with id=1003
+08-07-26 06:13:46.836 main                 DEBUG Session                   Closing session
+08-07-26 06:13:46.836 main                 DEBUG SessionFactory            Opening new Hibernate Session
+08-07-26 06:13:46.836 main                 DEBUG Session                   Beginning transaction
+Hibernate HQL [FROM Employee] -> select * from EMPLOYEE
+Hibernate: select * from EMPLOYEE
+08-07-26 06:13:46.849 main                  INFO ManageEmployeeAnnotation  Employee: Employee [id=1001, firstName=Zara, lastName=Ali, salary=1000]
+08-07-26 06:13:46.869 main                  INFO ManageEmployeeAnnotation  Employee: Employee [id=1002, firstName=Daisy, lastName=Das, salary=5000]
+08-07-26 06:13:46.872 main                  INFO ManageEmployeeAnnotation  Employee: Employee [id=1003, firstName=John, lastName=Paul, salary=10000]
+08-07-26 06:13:46.874 main                 DEBUG Transaction               Committing transaction
+08-07-26 06:13:46.874 main                 DEBUG Session                   Closing session
+08-07-26 06:13:46.874 main                 DEBUG SessionFactory            Opening new Hibernate Session
+08-07-26 06:13:46.874 main                 DEBUG Session                   Beginning transaction
+Hibernate: select * from EMPLOYEE where id=? [pk=1001]
+Hibernate: update EMPLOYEE set id='1001', first_name='Zara', last_name='Ali', salary='7000' where id=?
+08-07-26 06:13:46.878 main                 DEBUG Transaction               Committing transaction
+08-07-26 06:13:46.878 main                  INFO ManageEmployeeAnnotation  Employee id=1001 updated to salary=7000
+08-07-26 06:13:46.879 main                 DEBUG Session                   Closing session
+08-07-26 06:13:46.879 main                 DEBUG SessionFactory            Opening new Hibernate Session
+08-07-26 06:13:46.879 main                 DEBUG Session                   Beginning transaction
+Hibernate: select * from EMPLOYEE where id=? [pk=1002]
+Hibernate: delete from EMPLOYEE where id=? [pk=1002]
+08-07-26 06:13:46.880 main                 DEBUG Transaction               Committing transaction
+08-07-26 06:13:46.880 main                  INFO ManageEmployeeAnnotation  Employee id=1002 deleted
+08-07-26 06:13:46.880 main                 DEBUG Session                   Closing session
+08-07-26 06:13:46.883 main                 DEBUG SessionFactory            Opening new Hibernate Session
+08-07-26 06:13:46.884 main                 DEBUG Session                   Beginning transaction
+Hibernate HQL [FROM Employee] -> select * from EMPLOYEE
+Hibernate: select * from EMPLOYEE
+08-07-26 06:13:46.888 main                  INFO ManageEmployeeAnnotation  Employee: Employee [id=1001, firstName=Zara, lastName=Ali, salary=7000]
+08-07-26 06:13:46.890 main                  INFO ManageEmployeeAnnotation  Employee: Employee [id=1003, firstName=John, lastName=Paul, salary=10000]
+08-07-26 06:13:46.891 main                 DEBUG Transaction               Committing transaction
+08-07-26 06:13:46.892 main                 DEBUG Session                   Closing session
+08-07-26 06:13:46.892 main                  INFO SessionFactory            SessionFactory closed

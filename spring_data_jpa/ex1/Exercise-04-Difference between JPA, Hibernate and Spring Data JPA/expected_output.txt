@@ -1,0 +1,22 @@
+08-07-26 09:43:09.639 main                  INFO ComparisonDemo            ===== JPA is a specification; Hibernate is an implementation of it =====
+08-07-26 09:43:09.729 main                  INFO SessionFactory            Building SessionFactory for dialect=org.hibernate.dialect.MySQL8Dialect
+08-07-26 09:43:09.731 main                  INFO SessionFactory            Connecting to url=jdbc:mysql://localhost:3306/hibernatelearn as user=root
+08-07-26 09:43:09.735 main                  INFO SessionFactory            Mapped entity Employee -> table EMPLOYEE
+08-07-26 09:43:09.737 main                  INFO ComparisonDemo            --- Hibernate way: HibernateEmployeeDao.addEmployee() ---
+08-07-26 09:43:09.740 main                 DEBUG SessionFactory            Opening new Hibernate Session
+08-07-26 09:43:09.740 main                 DEBUG Session                   Beginning transaction
+Hibernate: insert into EMPLOYEE (id, first_name, last_name, salary) values ('1001', 'Zara', 'Ali', '1000')
+08-07-26 09:43:09.775 main                 DEBUG Transaction               Committing transaction
+08-07-26 09:43:09.777 main                 DEBUG Session                   Closing session
+08-07-26 09:43:09.779 main                  INFO ComparisonDemo            Employee persisted via plain Hibernate, id=1001
+08-07-26 09:43:09.779 main                  INFO ComparisonDemo            --- Spring Data JPA way: EmployeeService.addEmployee() ---
+08-07-26 09:43:09.780 main                  INFO SpringApplication         Starting ComparisonDemo using Java 21.0.11
+08-07-26 09:43:09.780 main                  INFO SpringApplication         Started ComparisonDemo - ApplicationContext initialised
+Hibernate: insert into EMPLOYEE (id, first_name, last_name, salary) values ('5001', 'Daisy', 'Das', '5000')
+08-07-26 09:43:09.795 main                  INFO ComparisonDemo            Employee persisted via Spring Data JPA, id=5001
+Hibernate: select * from EMPLOYEE
+08-07-26 09:43:09.797 main                 DEBUG ComparisonDemo            All employees in table: [Employee [id=1001, firstName=Zara, lastName=Ali, salary=1000], Employee [id=5001, firstName=Daisy, lastName=Das, salary=5000]]
+08-07-26 09:43:09.816 main                  INFO SessionFactory            SessionFactory closed
+08-07-26 09:43:09.821 main                  INFO ComparisonDemo            ===== Summary =====
+08-07-26 09:43:09.821 main                  INFO ComparisonDemo            Hibernate way   : 9 lines of session/transaction bookkeeping per method
+08-07-26 09:43:09.821 main                  INFO ComparisonDemo            Spring Data JPA : 1 line - employeeRepository.save(employee)
