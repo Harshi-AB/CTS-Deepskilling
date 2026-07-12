@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    country-prototype.xml
+
+    Identical to country.xml except that the "country" bean is declared
+    with scope="prototype". With prototype scope, the Spring container
+    creates a brand-new instance of Country every time getBean() is
+    called for this bean id, instead of reusing a single shared
+    instance (which is the default "singleton" scope used in
+    country.xml).
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="country" class="com.cognizant.springlearn.Country" scope="prototype">
+        <property name="code" value="IN" />
+        <property name="name" value="India" />
+    </bean>
+
+</beans>

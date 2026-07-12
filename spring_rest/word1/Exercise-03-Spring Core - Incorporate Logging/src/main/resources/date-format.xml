@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    date-format.xml
+
+    Spring XML configuration file that defines a single bean of type
+    java.text.SimpleDateFormat. Defining it here (instead of instantiating
+    "new SimpleDateFormat(...)" in multiple places of the application)
+    means every part of the application that needs this exact date
+    pattern can simply ask the Spring container for the "dateFormat" bean.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        The "dateFormat" bean is created by calling the constructor of
+        SimpleDateFormat that accepts a pattern String, via constructor
+        injection (<constructor-arg>).
+    -->
+    <bean id="dateFormat" class="java.text.SimpleDateFormat">
+        <constructor-arg value="dd/MM/yyyy" />
+    </bean>
+
+</beans>

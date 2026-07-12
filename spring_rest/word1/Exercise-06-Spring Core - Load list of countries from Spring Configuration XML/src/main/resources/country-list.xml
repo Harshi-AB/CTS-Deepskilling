@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    country-list.xml
+
+    Defines four individual Country beans (one per country supported by
+    the airlines website's drop-down: India, United States, Germany,
+    Japan) and a single "countryList" bean of type java.util.ArrayList
+    that is constructed with a <list> of <ref> elements pointing back
+    at those four beans.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Individual country beans -->
+    <bean id="in" class="com.cognizant.springlearn.Country">
+        <property name="code" value="IN" />
+        <property name="name" value="India" />
+    </bean>
+
+    <bean id="us" class="com.cognizant.springlearn.Country">
+        <property name="code" value="US" />
+        <property name="name" value="United States" />
+    </bean>
+
+    <bean id="de" class="com.cognizant.springlearn.Country">
+        <property name="code" value="DE" />
+        <property name="name" value="Germany" />
+    </bean>
+
+    <bean id="jp" class="com.cognizant.springlearn.Country">
+        <property name="code" value="JP" />
+        <property name="name" value="Japan" />
+    </bean>
+
+    <!--
+        "countryList" bean - an ArrayList populated (via constructor
+        injection) with references to the four Country beans defined
+        above. Each <ref bean="..."/> points to an existing bean id.
+    -->
+    <bean id="countryList" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <ref bean="in"></ref>
+                <ref bean="us"></ref>
+                <ref bean="de"></ref>
+                <ref bean="jp"></ref>
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
