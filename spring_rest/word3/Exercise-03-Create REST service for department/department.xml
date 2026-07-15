@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    department.xml
+
+    Plays the role of the "spring xml configuration" for the
+    Department REST service. DepartmentDao reads this file to
+    populate the static DEPARTMENT_LIST.
+-->
+<departmentConfig>
+    <departments>
+        <department>
+            <id>1</id>
+            <name>Information Technology</name>
+        </department>
+        <department>
+            <id>2</id>
+            <name>Human Resources</name>
+        </department>
+        <department>
+            <id>3</id>
+            <name>Finance</name>
+        </department>
+    </departments>
+</departmentConfig>

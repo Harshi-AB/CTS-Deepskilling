@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    employee.xml
+
+    This file plays the role of the "spring xml configuration" referred
+    to in the exercise. It contains:
+      - Two departments (IT, HR) - "Create one or two more departments"
+      - Four employee instances  - "Create four more instances of Employee"
+    Each employee reuses one of the two departments and has a list of
+    skills, exactly as required by the exercise.
+-->
+<employeeConfig>
+
+    <departments>
+        <department>
+            <id>1</id>
+            <name>Information Technology</name>
+        </department>
+        <department>
+            <id>2</id>
+            <name>Human Resources</name>
+        </department>
+    </departments>
+
+    <employeeList>
+        <employee>
+            <id>101</id>
+            <name>John Smith</name>
+            <email>john.smith@cognizant.com</email>
+            <departmentId>1</departmentId>
+            <skills>
+                <skill>Java</skill>
+                <skill>Spring</skill>
+                <skill>REST</skill>
+            </skills>
+        </employee>
+        <employee>
+            <id>102</id>
+            <name>Emma Watson</name>
+            <email>emma.watson@cognizant.com</email>
+            <departmentId>2</departmentId>
+            <skills>
+                <skill>Recruitment</skill>
+                <skill>Employee Relations</skill>
+            </skills>
+        </employee>
+        <employee>
+            <id>103</id>
+            <name>Michael Brown</name>
+            <email>michael.brown@cognizant.com</email>
+            <departmentId>1</departmentId>
+            <skills>
+                <skill>Java</skill>
+                <skill>Angular</skill>
+                <skill>SQL</skill>
+            </skills>
+        </employee>
+        <employee>
+            <id>104</id>
+            <name>Olivia Davis</name>
+            <email>olivia.davis@cognizant.com</email>
+            <departmentId>2</departmentId>
+            <skills>
+                <skill>Payroll</skill>
+                <skill>Onboarding</skill>
+            </skills>
+        </employee>
+    </employeeList>
+
+</employeeConfig>
