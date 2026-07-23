@@ -1,0 +1,19 @@
+/* CohortDetails.module.css
+   CSS Module for the CohortDetails component.
+   Scoped locally by the build tool (webpack/CRA), so class names
+   like ".box" won't collide with other components' styles. */
+
+.box {
+  width: 300px;
+  display: inline-block;
+  margin: 10px;               /* overall 10px margin on all sides */
+  padding: 10px 20px;         /* top/bottom 10px, left/right 20px */
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/* Tag selector (not a class) — styles every <dt> rendered
+   inside a component that imports this module. */
+dt {
+  font-weight: 500;
+}
